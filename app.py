@@ -1,3 +1,4 @@
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.llms import Ollama
@@ -14,7 +15,7 @@ os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 
 prompt=ChatPromptTemplate.from_messages(
     [
-        ("system","You are a helpful assistant. Please response to the user queries"),
+        ("system","You are a helpful assistant. Please response to the user queries , be precise and answer in only 100-150 words."),
         ("user","Question:{question}")
     ]
 )
